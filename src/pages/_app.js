@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react'
 import { Toaster } from 'react-hot-toast'
 import Layout from '../components/Layout'
@@ -40,10 +39,3 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp
-=======
-import "@/styles/globals.css";
-
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
-}
->>>>>>> 649369c209634704060cc6d27245438b31ba1e7e
