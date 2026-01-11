@@ -1,6 +1,5 @@
 1.
   git remote add origin git@github.com:krestininigor1963/macaronmagic.git
-  git pull origin main --allow-unrelated-histories  ???
   git push -u origin main
 
 2.
