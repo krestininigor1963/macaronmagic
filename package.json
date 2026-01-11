@@ -1,0 +1,57 @@
+{
+  "name": "macaronmagic",
+  "version": "0.3.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run --browser chrome --headless",
+    "cypress:component": "cypress run --component"
+  },
+  "dependencies": {
+    "@sanity/client": "^7.13.1",
+    "@sanity/icons": "^3.7.4",
+    "@sanity/image-url": "^1.2.0",
+    "@sanity/vision": "^4.21.0",
+    "@stripe/stripe-js": "^8.6.0",
+    "canvas-confetti": "^1.9.4",
+    "next": "^15.5.7",
+    "next-router-mock": "^1.0.5",
+    "next-sanity": "^11.6.10",
+    "next-sanity-image": "^6.2.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "react-hot-toast": "^2.6.0",
+    "react-icons": "^5.5.0",
+    "react-tabs": "^6.1.0",
+    "sanity": "^4.21.0",
+    "stripe": "^8.209.0",
+    "styled-components": "^6.1.19"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.18",
+    "autoprefixer": "^10.4.23",
+    "cypress": "^15.8.2",
+    "eslint": "^9.39.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "^16.0.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "next-seo": "^7.0.1",
+    "postcss": "^8.5.6",
+    "sass": "^1.97.1",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
+  },
+  "nextBundleAnalysis": {
+    "budget": 358400,
+    "budgetPercentIncreaseRed": 20,
+    "minimumChangeThreshold": 0,
+    "showDetails": true
+  }
+}
