@@ -57,6 +57,9 @@ jobs:
 
       - name: Build next.js app
         # change this if your site requires a custom build command
+        env:
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+          NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
         run: ./node_modules/.bin/next build
 
       # Here's the first place where next-bundle-analysis' own script is used
