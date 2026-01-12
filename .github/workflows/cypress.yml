@@ -1,0 +1,26 @@
+name: Cypress Tests
+on: [push]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          # Команда для запуска сервера (Next.js)
+          start: npm run dev
+          # Ждать, пока сервер поднимется на этом порту
+          wait-on: 'http://localhost:3000'
+          # Если используете компонентные тесты, добавьте:
+          # component: true
+        env:
+          # Добавьте переменные Sanity, чтобы тесты видели данные
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+          NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
