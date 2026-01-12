@@ -31,7 +31,9 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <p className={styles.copyright}>2022 Macaron Magic All rights reserved</p>
+      <p className={styles.copyright}>
+        &copy; 2026 Macaron Magic All rights reserved, belgorod{' '}
+      </p>
     </>
   )
 }
