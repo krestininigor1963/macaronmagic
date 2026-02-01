@@ -113,12 +113,15 @@ a {
 
 /* "Luxury Macarons made by hand" banner on front page */
 .banner {
-  float: right;
-  margin: 100px 350px;
+  /* Вместо float: right и margin: 100px 350px */
+  margin: 100px auto;
+  width: fit-content;
   font-size: 36px;
   display: flex;
   flex-direction: column;
   text-align: center;
+  position: relative; /* Гарантируем, что он не раздувается */
+  z-index: 5;
 }
 
 .banner > span:nth-child(2) {
@@ -135,7 +138,8 @@ a {
   font-size: 60px;
   line-height: 1.1em;
   color: #ffffff;
-  width: 500px;
+  max-width: 500px; /* Используйте max-width вместо width */
+  width: 100%;
 }
 
 /* Newsletter component - home page */
@@ -466,6 +470,8 @@ a {
   gap: 15px;
   margin-top: 20px;
   width: 100%;
+  position: relative;
+  z-index: 10; /* Ставим товары выше баннеров */
 }
 .product-card {
   cursor: pointer;
