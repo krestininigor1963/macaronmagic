@@ -2,28 +2,32 @@ import React from 'react'
 import Link from 'next/link'
 import PerfectBanner from '../components/PerfectBanner'
 import Newsletter from '../components/Newsletter'
-import { client } from '../lib/client' // Клиент уже импортирован, это хорошо
-import Product from '../components/Product' // Добавьте импорт компонента товара
+import { client } from '../lib/client'
+import Info from '../components/Info'
 import Head from 'next/head'
+import { generateNextSeo } from 'next-seo/pages'
 
-// 1. Добавляем { products } в пропсы
-const Home = ({ products }) => (
+const Home = () => (
   <>
     <Head>
-      <title>Macaron Magic</title>
+      {generateNextSeo({
+        title: 'Macaron Magic',
+        description: 'Great tasting home-made macarons',
+      })}
     </Head>
     <div>
       <div className='frontlogo'>
         <div className='banner'>
           <span className='tagline'>Luxury macarons made by hand</span>
-          <Link href='/shop' className='shop-now'>
-            Shop Now
-          </Link>
+          <span>
+            <Link className='shop-now' href='/shop'>
+              Shop Now
+            </Link>
+          </span>
         </div>
       </div>
 
       <div className='intro'>
-        {/* Здесь ваши тексты про макароны */}
         <p>
           Welcome to Macaron Magic - the home of great-tasting, luxurious
           macarons, made by hand here in our workshop in the Peak District.
@@ -40,29 +44,10 @@ const Home = ({ products }) => (
           page.
         </p>
       </div>
-
-      {/* 2. Добавляем секцию с товарами из Sanity */}
-      <div className='products-container'>
-        {products?.map((product) => (
-          <Product key={product._id} product={product} />
-        ))}
-      </div>
-
       <PerfectBanner />
       <Newsletter />
     </div>
   </>
 )
-
-// 3. Добавляем функцию загрузки данных
-export const getStaticProps = async () => {
-  const query = '*[_type == "product"]'
-  const products = await client.fetch(query)
-
-  return {
-    props: { products },
-    revalidate: 10,
-  }
-}
 
 export default Home
